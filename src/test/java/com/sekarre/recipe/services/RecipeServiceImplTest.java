@@ -1,5 +1,7 @@
 package com.sekarre.recipe.services;
 
+import com.sekarre.recipe.converters.RecipeCommandToRecipe;
+import com.sekarre.recipe.converters.RecipeToRecipeCommand;
 import com.sekarre.recipe.domain.Recipe;
 import com.sekarre.recipe.repositories.RecipeRepository;
 import org.junit.jupiter.api.BeforeEach;
@@ -20,6 +22,12 @@ class RecipeServiceImplTest {
 
     @Mock
     RecipeRepository recipeRepository;
+
+    @Mock
+    RecipeCommandToRecipe recipeCommandToRecipe;
+
+    @Mock
+    RecipeToRecipeCommand recipeToRecipeCommand;
 
 
     @BeforeEach
