@@ -4,6 +4,7 @@ import com.sekarre.recipe.commands.RecipeCommand;
 import com.sekarre.recipe.converters.RecipeCommandToRecipe;
 import com.sekarre.recipe.converters.RecipeToRecipeCommand;
 import com.sekarre.recipe.domain.Recipe;
+import com.sekarre.recipe.exceptions.RecipeNotFoundException;
 import com.sekarre.recipe.repositories.RecipeRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -41,7 +42,7 @@ public class RecipeServiceImpl implements RecipeService {
         Optional<Recipe> recipeOptional = recipeRepository.findById(l);
 
         if (!recipeOptional.isPresent()) {
-            throw new RuntimeException("Recipe Not Found!");
+            throw new RecipeNotFoundException("Recipe Not Found!");
         }
 
         return recipeOptional.get();
