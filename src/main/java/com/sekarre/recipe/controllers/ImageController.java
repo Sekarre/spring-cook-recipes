@@ -17,8 +17,6 @@ import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
-import static org.apache.tomcat.util.http.fileupload.IOUtils.copy;
-
 
 @Controller
 public class ImageController {
